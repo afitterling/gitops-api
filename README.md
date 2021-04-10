@@ -1,6 +1,6 @@
 # README
 
-specs and core dor automated APIs and modelling.
+Specs and code for automated APIs
 
 # license
 
