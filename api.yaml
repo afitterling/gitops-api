@@ -34,12 +34,12 @@ security:
     - access_token
 
 resource:
-  name: userListResource
+  name: UserList
   types:
-    - GET
-      model: User
-        - findBy: id
-      jwt: required
+    #- GET
+    #  model: User
+    #    - findBy: id
+    #  jwt: required
     - POST
       model: User
       jwt: required 
@@ -47,8 +47,8 @@ resource:
 endpoint:
   name: user
   url: /user
-    - GET: /user/<id:int>
-    - POST: /user
+    #- GET: /user/<id:int>
+    - POST: /users
 
 
 
