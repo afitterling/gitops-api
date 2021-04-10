@@ -1,0 +1,22 @@
+model:
+  name: user
+
+model:
+    name: item
+    table_name: items
+    relates: user
+    relation: onetomany
+    attributes:
+        id:
+            type: number
+            key: primary
+            - unique:true
+        name:
+            type: string
+            constrains:
+              - unique:false
+
+
+constraints:
+  unique: 
+
