@@ -46,10 +46,10 @@ resource:
       jwt: required 
 
 endpoint:
-  name: user
-  url: /user
+  name: users
+  url: /users
     #- GET: /user/<id:int>
-    - POST: /users
+    - POST: /
 
 
 
