@@ -1,6 +1,7 @@
 dbms: postgres
 orm: sqlalchemy
 output: flask
+infrastructure: heroku
 
 model:
   name: user
