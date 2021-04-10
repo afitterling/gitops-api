@@ -11,8 +11,6 @@ Redux defines itself as a pattern that can be interpreted as a result of a HoF o
 
 Never be nerved with programmers....
 
-The next step will be to teach a quantum computer to learn how to describe an app.
-
 # license
 
 GPL
