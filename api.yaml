@@ -1,5 +1,15 @@
+dbms: postgres
+orm: sqlalchemy
+output: flask
+
 model:
   name: user
+  attributes:
+    id:
+      type: number
+      key: primary
+      #index: true
+      unique: true
 
 model:
     name: item
@@ -10,13 +20,41 @@ model:
         id:
             type: number
             key: primary
-            - unique:true
+            unique: true
         name:
             type: string
             constrains:
-              - unique:false
+              unique: false
+
+api: rest
+security: 
+  name: jwt
+  tokens:
+    - refresh
+    - access_token
+
+resource:
+  name: userListResource
+  types:
+    - GET
+      model: User
+        - findBy: id
+      jwt: required
+    - POST
+      model: User
+      jwt: required 
+
+endpoint:
+  name: user
+  url: /user
+    - GET: /user/<id:int>
+    - POST: /user
 
 
-constraints:
-  unique: 
 
+
+
+
+
+
+    
