@@ -41,14 +41,15 @@ model:
             constrains:
               unique: false
 
-api: rest
-security: 
-  name: jwt
-  tokens:
-    - refresh
-    - access_token
+api:
+  type: rest
+  security:
+    jwt:
+      tokens:
+        - refresh
+        - access_token
 
-resources:
+resource:
   ItemList:
     types:
       - verb: GET
@@ -65,7 +66,7 @@ resources:
             - name
         jwt: required 
 
-endpoints:
+endpoint:
   usersCreate: 
     url: /users
     resource: UserList
