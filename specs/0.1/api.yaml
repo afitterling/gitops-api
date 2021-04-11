@@ -45,12 +45,13 @@ models:
                 unique: false
 
 apis:
-  type: rest
-  security:
-    jwt:
-      tokens:
-        - refresh
-        - access_token
+  myapi:
+    type: rest
+    security:
+      jwt:
+        tokens:
+          - refresh
+          - access_token
 
 resources:
   ItemList:
