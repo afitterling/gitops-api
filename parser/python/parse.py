@@ -7,5 +7,8 @@ with open("specs/0.1/api.yaml", 'r') as stream:
 
 #cpprint(model)
 
-cpprint(model.get('version'))
-cpprint(model.get('models'))
+version = model.get('version')
+models = list(model.get('models').keys())
+
+cpprint(version)
+cpprint('models: ' + str(models))
