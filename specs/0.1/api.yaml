@@ -44,18 +44,22 @@ security:
     - refresh
     - access_token
 
-resource:
-  name: ItemList
-  types:
-    - verb: GET
-      model:
-        - Item:
-      jwt: required
-    - verb: POST
-      model:
-        - Item:
-          - name
-      jwt: required 
+resources:
+  ItemList:
+    types:
+      - verb: GET
+        model:
+          Items:
+            belongsTo: User
+            attributes:
+              - id
+              - name
+        jwt: required
+      - verb: POST
+        model:
+          - Item:
+            - name
+        jwt: required 
 
 endpoints:
   usersCreate: 
