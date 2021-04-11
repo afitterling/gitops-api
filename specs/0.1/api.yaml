@@ -4,13 +4,17 @@ generator:
     orm: sqlalchemy
     envs:
       dev:
-        sqlite: 'dbstring'
+        sqlite: 'sqlite:///api.db'
       heroku-dev:
-        postgres: 'dbstring' # add by ENV
+        postgres: 'REPLACEMELATER' # or set by ENV
       
 deploy:
-  infrastructure: 
-    heroku: flask
+  infrastructures: 
+    heroku:
+      name: heroku-dev
+      target:
+        python: flask
+        env: heroku-dev
 
 
 model:
