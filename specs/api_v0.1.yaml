@@ -41,15 +41,15 @@ resource:
     #  model: User
     #    - findBy: id
     #  jwt: required
-    - POST
+    - POST:
       model: User
       jwt: required 
 
-endpoint:
-  name: users
-  url: /users
+#endpoint:
+#  name: users
+#  url: /users
     #- GET: /user/<id:int>
-    - POST: /
+#    - POST: /
 
 
 

@@ -1,0 +1,4 @@
+colorful==0.5.4
+prettyprinter==0.18.0
+Pygments==2.8.1
+PyYAML==5.4.1
