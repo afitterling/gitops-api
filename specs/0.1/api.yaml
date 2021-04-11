@@ -1,7 +1,17 @@
-dbms: postgres
-orm: sqlalchemy
-output: flask
-infrastructure: heroku
+generator:
+  python:
+    target: flask
+    orm: sqlalchemy
+    envs:
+      dev:
+        sqlite: 'dbstring'
+      heroku-dev:
+        postgres: 'dbstring' # add by ENV
+      
+deploy:
+  infrastructure: 
+    heroku: flask
+
 
 model:
   name: user
@@ -35,22 +45,27 @@ security:
     - access_token
 
 resource:
-  name: UserList
+  name: ItemList
   types:
-    #- GET
-    #  model: User
-    #    - findBy: id
-    #  jwt: required
-    - POST:
-      model: User
+    - verb: GET
+      model:
+        - Item:
+      jwt: required
+    - verb: POST
+      model:
+        - Item:
+          - name
       jwt: required 
 
-#endpoint:
-#  name: users
-#  url: /users
-    #- GET: /user/<id:int>
-#    - POST: /
-
+endpoints:
+  usersCreate: 
+    url: /users
+    resource: UserList
+    action:
+      create:
+        - name
+        - email
+        - password
 
 
 
